@@ -19,7 +19,7 @@ var parser = new JsParser();
 
 parser.parseFile('FILENAME', function (err, results) {
   if (err) {
-    console.error('Error: ', err);
+    console.error('Error:', err);
     return;
   }
   
