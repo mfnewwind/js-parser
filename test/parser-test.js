@@ -16,6 +16,7 @@ var JsParser = require('../lib/parser');
 
 var INPUT_PATH = Path.resolve(__dirname, 'files/input.js');
 var SOURCE = 'var s = "Hello"; console.log(s);';
+var INVALID_SOURCE = 'varx s = "Hello; console.log((s)';
 
 
 describe('Unit test for lib/parser.js', function () {
@@ -63,6 +64,15 @@ describe('Unit test for lib/parser.js', function () {
       parser.parse(SOURCE, function (err, result) {
         expect(result).to.be.an('array');
         done(err);
+      });
+    });
+    
+    it('should return some errors because syntax is invalid', function (done) {
+      var parser = new JsParser();
+      
+      parser.parse(INVALID_SOURCE, function (err, result) {
+        expect(err).to.be.ok;
+        done();
       });
     });
   });

@@ -2,7 +2,7 @@
 
 /*jslint node: true */
 /*jslint -W030 */
-/*globals describe, it, beforeEach, afterEach */
+/*globals describe, it, before, beforeEach, afterEach */
 
 
 var Path = require('path');
@@ -19,9 +19,12 @@ var parseVariables = require('../lib/variable');
 describe('Unit test for lib/variable.js', function () {
   var sandbox, parser;
   
+  before(function () {
+    parser = new JsParser();
+  });
+  
   beforeEach(function () {
     sandbox = sinon.sandbox.create();
-    parser = new JsParser();
   });
   
   afterEach(function () {
