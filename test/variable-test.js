@@ -39,7 +39,7 @@ describe('Unit test for lib/variable.js', function () {
       expect(result[0]).to.have.property('name').that.is.string('name');
       expect(result[0]).to.have.property('class_name').that.is.string('');
       expect(result[0]).to.have.property('comment').that.is.a('string');
-      expect(result[0]).to.have.property('line').that.is.a('number');
+      expect(result[0]).to.have.property('pos').that.is.a('number');
     });
     
     it('should parse simple source (2 variables)', function () {

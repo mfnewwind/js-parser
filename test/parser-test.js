@@ -66,4 +66,33 @@ describe('Unit test for lib/parser.js', function () {
       });
     });
   });
+  
+  describe('#_positionToLineNumber', function () {
+    it('should convert `pos` to `line`', function () {
+      var parser = new JsParser();
+      
+      var source = 'var a = 0;\nvar b = 1;';
+      var results = [
+        {
+          type: 'variable',
+          name: 'a',
+          class_name: '',
+          comment: '',
+          pos: 4
+        },
+        {
+          type: 'variable',
+          name: 'b',
+          class_name: '',
+          comment: '',
+          pos: 15
+        }
+      ];
+      
+      parser._positionToLineNumber(source, results);
+      
+      expect(results[0].line).to.equal(0);
+      expect(results[1].line).to.equal(1);
+    });
+  });
 });
