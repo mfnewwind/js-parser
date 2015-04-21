@@ -41,5 +41,17 @@ describe('Unit test for lib/variable.js', function () {
       expect(result[0]).to.have.property('comment').that.is.a('string');
       expect(result[0]).to.have.property('line').that.is.a('number');
     });
+    
+    it('should parse simple source (2 variables)', function () {
+      var ast = parser.toAST('var name1 = "value", name2 = 1;');
+      var result = parseVariables(ast);
+      
+      expect(result).to.be.an('array');
+      expect(result).to.have.length(2);
+      
+      var names = _.pluck(result, 'name');
+      expect(names).to.include('name1');
+      expect(names).to.include('name2');
+    });
   });
 });
