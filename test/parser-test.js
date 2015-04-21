@@ -101,8 +101,8 @@ describe('Unit test for lib/parser.js', function () {
       
       parser._positionToLineNumber(source, results);
       
-      expect(results[0].line).to.equal(0);
-      expect(results[1].line).to.equal(1);
+      expect(results[0].line).to.equal(1);
+      expect(results[1].line).to.equal(2);
     });
   });
 });
