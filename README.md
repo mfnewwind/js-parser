@@ -13,7 +13,7 @@ $ npm install git+https://github.com/mfnewwind/js-parser.git
 
 ## Usage
 
-```sh
+```javascript
 var JsParser = require('js-parser');
 var parser = new JsParser();
 
