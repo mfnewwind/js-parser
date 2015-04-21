@@ -15,6 +15,7 @@ var JsParser = require('../lib/parser');
 
 
 var INPUT_PATH = Path.resolve(__dirname, 'files/input.js');
+var SOURCE = 'var s = "Hello"; console.log(s);';
 
 
 describe('Unit test for lib/parser.js', function () {
@@ -49,6 +50,17 @@ describe('Unit test for lib/parser.js', function () {
       
       parser.parseFile(INPUT_PATH, function (err, result) {
         expect(parse).to.have.been.calledOnce;
+        expect(result).to.be.an('array');
+        done(err);
+      });
+    });
+  });
+  
+  describe('#parse', function () {
+    it('should not throw to parse source', function (done) {
+      var parser = new JsParser();
+      
+      parser.parse(SOURCE, function (err, result) {
         expect(result).to.be.an('array');
         done(err);
       });
