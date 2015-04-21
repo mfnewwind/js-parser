@@ -24,6 +24,8 @@
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1",
-    "gulp-plumber": "^1.0.0"
+    "gulp-plumber": "^1.0.0",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
   }
 }
