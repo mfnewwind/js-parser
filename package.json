@@ -1,0 +1,29 @@
+{
+  "name": "js-parser",
+  "version": "1.0.0",
+  "description": "The syntax parser for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfnewwind/js-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mfnewwind/js-parser/issues"
+  },
+  "homepage": "https://github.com/mfnewwind/js-parser",
+  "private": true,
+  "dependencies": {
+    "acorn": "^1.0.3",
+    "lodash": "^3.7.0"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-plumber": "^1.0.0"
+  }
+}
