@@ -55,6 +55,42 @@ describe('Unit test for lib/parser.js', function () {
         done(err);
       });
     });
+    
+    it('should not throw to parse source file', function (done) {
+      var parser = new JsParser();
+      
+      parser.parseFile(INPUT_PATH, function (err, results) {
+        try {
+          expect(err).to.not.be.ok;
+          
+          console.log(results);
+          
+          var variable_j = _.find(results, function (x) { return x.name === 'j'; });
+          expect(variable_j).to.deep.equal({
+            type: 'variable',
+            name: 'j',
+            line: 9,
+            class_name: '',
+            comment: ''
+          });
+          
+          var func_print = _.find(results, function (x) { return x.name === 'print'; });
+          expect(func_print).to.deep.equal({
+            type: 'function',
+            name: 'print',
+            line: 8,
+            class_name: '',
+            comment: ''
+          });
+
+          done();
+        }
+        
+        catch (e) {
+          done(e);
+        }
+      });
+    });
   });
   
   describe('#parse', function () {

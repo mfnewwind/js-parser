@@ -1,5 +1,7 @@
 /*globals console */
 
+// テストで用いているため、容易に変更禁止
+
 (function () {
   'use strict';
   
