@@ -8,11 +8,15 @@
 var Path = require('path');
 
 var _ = require('lodash');
-var expect = require('chai').expect;
+var chai = require('chai');
 var sinon = require('sinon');
+var sinonChai = require('sinon-chai');
 
 var JsParser = require('../lib/parser');
 
+
+var expect = chai.expect;
+chai.use(sinonChai);
 
 var INPUT_PATH = Path.resolve(__dirname, 'files/input.js');
 var SOURCE = 'var s = "Hello"; console.log(s);';
