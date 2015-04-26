@@ -75,7 +75,7 @@ describe('Unit test for lib/parser.js', function () {
             name: 'j',
             line: 9,
             class_name: '',
-            comment: ''
+            comment: 'comment'
           });
           
           var func_print = _.find(results, function (x) { return x.name === 'print'; });
@@ -143,6 +143,46 @@ describe('Unit test for lib/parser.js', function () {
       
       expect(results[0].line).to.equal(1);
       expect(results[1].line).to.equal(2);
+    });
+  });
+  
+  describe('#toAST', function () {
+    it('should get source comments', function () {
+      var parser = new JsParser();
+      
+      var source = 'var a = 0; // comment';
+      var comments = [];
+      var ast = parser.toAST(source, comments);
+      
+      expect(comments).to.have.length(1);
+      expect(comments[0]).to.have.property('value').that.include('comment');
+    });
+    
+    it('should get source block comments', function () {
+      var parser = new JsParser();
+      
+      var source = '/**\n * This is a block comment\n */\nvar a = 0;';
+      var comments = [];
+      var ast = parser.toAST(source, comments);
+      
+      expect(comments).to.have.length(1);
+      expect(comments[0]).to.have.property('value').that.include('This is a block comment');
+    });
+  });
+  
+  describe('#_commentsToLineNumber', function () {
+    it('should convert comments', function () {
+      var parser = new JsParser();
+      
+      var source = 'var a = 0; // comment';
+      var comments = [];
+      var ast = parser.toAST(source, comments);
+      parser._commentsToLineNumber(source, comments);
+      
+      expect(comments).to.have.length(1);
+      expect(comments[0]).to.have.property('line').that.is.a('number');
+      expect(comments[0]).to.have.property('start_line').that.is.a('number');
+      expect(comments[0]).to.have.property('end_line').that.is.a('number');
     });
   });
 });

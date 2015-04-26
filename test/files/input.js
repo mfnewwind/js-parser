@@ -6,7 +6,7 @@
   'use strict';
   
   function print(i) {
-    var j = i;
+    var j = i; //comment
     console.log(j);
   }
   
