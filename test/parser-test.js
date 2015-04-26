@@ -74,6 +74,8 @@ describe('Unit test for lib/parser.js', function () {
             type: 'variable',
             name: 'j',
             line: 9,
+            start_line: 9,
+            end_line: 9,
             class_name: '',
             comment: 'comment'
           });
@@ -83,6 +85,8 @@ describe('Unit test for lib/parser.js', function () {
             type: 'function',
             name: 'print',
             line: 8,
+            start_line: 8,
+            end_line: 11,
             class_name: '',
             comment: ''
           });
