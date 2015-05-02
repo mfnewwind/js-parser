@@ -6,7 +6,7 @@
   "scripts": {
     "test": "gulp test",
     "watch": "gulp watch",
-    "coverage": "coveralls < coverage/lcov.info"
+    "coverage": "coveralls < coverage/lcov.info && codeclimate-test-reporter < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
+    "codeclimate-test-reporter": "0.0.4",
     "coveralls": "^2.11.2",
     "gulp": "^3.8.11",
     "gulp-istanbul": "^0.8.1",
