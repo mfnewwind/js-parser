@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "coverage": "coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
+    "coveralls": "^2.11.2",
     "gulp": "^3.8.11",
+    "gulp-istanbul": "^0.8.1",
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1",
     "gulp-plumber": "^1.0.0",
