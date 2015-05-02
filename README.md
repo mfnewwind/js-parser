@@ -1,7 +1,7 @@
 js-parser
 ---------
 
-[![Circle CI](https://circleci.com/gh/mfnewwind/js-parser/tree/master.svg?style=svg)](https://circleci.com/gh/mfnewwind/js-parser/tree/master)
+[![Circle CI](https://img.shields.io/circleci/project/mfnewwind/js-parser/master.svg?style=flat-square)](https://circleci.com/gh/mfnewwind/js-parser/tree/master)
 [![Coverage Status](https://img.shields.io/coveralls/mfnewwind/js-parser/master.svg?style=flat-square)](https://coveralls.io/r/mfnewwind/js-parser?branch=master)
 
 JavaScript の構文解析を行うライブラリです。
