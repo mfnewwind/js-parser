@@ -2,3 +2,7 @@ machine:
   #timezone: Asia/Tokyo
   node:
     version: 0.12
+
+test:
+  post:
+    - npm run coverage
